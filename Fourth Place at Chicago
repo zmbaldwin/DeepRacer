@@ -1,0 +1,29 @@
+This is the fourth place algorithm that I ran at the Chicago AWS Summit. 
+I had only trained it for two hours will have to see if the model can inprove on the 10.930 time after more time in the sim.
+
+Reward Algo
+def reward_function(params):
+    '''
+    Example of rewarding the agent to stay inside the two borders of the track
+    '''
+    
+    # Read input parameters
+    all_wheels_on_track = params['all_wheels_on_track']
+    distance_from_center = params['distance_from_center']
+    track_width = params['track_width']
+    marker = 0.5 * track_width
+    
+    # Give a very low reward by default
+    reward = 1e-3
+
+    # Give a high reward if no wheels go off the track and
+    # the agent is somewhere in between the track borders
+    if all_wheels_on_track:
+        reward = 2.0
+    elif distance_from_center <= marker:
+        reward = 1.0
+    else:
+        reward = 1e-3
+
+    # Always return a float value
+    return float(reward)
