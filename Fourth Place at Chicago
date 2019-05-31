@@ -1,5 +1,12 @@
 This is the fourth place algorithm that I ran at the Chicago AWS Summit. 
 I had only trained it for two hours will have to see if the model can inprove on the 10.930 time after more time in the sim.
+Action items:
+20 degrees and 3m/s 
+This gave the car three actions
+
+I increased the batch sqize to 128, the entropy to 0.05 and the learing rate to 0.00003.
+
+I lowered the learing rate to allow for smooth clean learning instead of a rapid caotic learing process.
 
 Reward Algo
 def reward_function(params):
