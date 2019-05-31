@@ -1,4 +1,16 @@
+This is my second attempt at a ML reward algorithm.
+I trained this at the same time as my first one and ran into simular issues.
 
+Action Space:
+20 Degrees and 4m/s
+Giving the model 3 action options
+
+Hyperparameters:
+Increase batch to 128
+Entropy: 0.02
+Experence Episodes: 25
+Loss type: Mean Squared
+All others default
 
 def reward_function(params):
     
